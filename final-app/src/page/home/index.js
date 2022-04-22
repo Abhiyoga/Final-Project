@@ -1,6 +1,6 @@
-import Navbar from "../../compoonents/Navbar"
-import Tracks from "../../compoonents/Tracks"
-import UserPlaylist from "../../compoonents/playlist/index"
+import Navbar from "../../component/Navbar"
+import Tracks from "../../component/Tracks"
+import UserPlaylist from "../../component/Playlist/index"
 
 const Home = () => {
   return (

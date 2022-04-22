@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Container from "../../compoonents/Container";
+import Container from "../../component/Container";
 import { useStoreApi } from "../../context/useStoreApi";
 import { useSearchResult } from "../../context/useSearchResult";
-import Track from "../../compoonents/Track";
+import Track from "../../component/Track";
 
 const CreatePlaylist = ()=>{
     const { selectedSongs, setSelectedSongs, setResult } = useSearchResult()

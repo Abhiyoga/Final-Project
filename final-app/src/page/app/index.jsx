@@ -1,4 +1,4 @@
-import Navbar from "../../compoonents/Navbar"
+import Navbar from "../../component/Navbar"
 import CreatePlaylist from "../playlist/index";
 
 
