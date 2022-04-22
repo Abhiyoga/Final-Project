@@ -6,6 +6,7 @@ import { useSearchResult } from '../../context/useSearchResult';
 import { useStoreApi } from '../../context/useStoreApi';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import Container from '../Container';
 
 const BASE_URL = process.env.REACT_APP_SPOTIFY_BASE_URL
 const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID
@@ -53,6 +54,7 @@ const Navbar = () => {
 
     return (
         <section className="bg-gray-700 py-4">
+            <Container>
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between px-2">
                     <Link to="/" className="text-green-500 font-bold text-lg lg:text-2xl">
                         Spotify Clone
@@ -84,6 +86,7 @@ const Navbar = () => {
                         </div>
                     }
                 </div>
+            </Container>
         </section>
     )
 }

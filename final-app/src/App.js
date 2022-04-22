@@ -1,10 +1,46 @@
-import Navbar from './component/Navbar';
-import './App.css';
+import "./App.css";
+import React from 'react'
+import { SearchProvider } from "./context/useSearchResult"
+import { ApiProvider } from "./context/useStoreApi"
+import Home from "./page/home";
+import { useSelector } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
+import MainApp from "./page/app";
 
 function App() {
+  const token = useSelector(state => state.auth.token);
   return (
-    <Navbar/>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/create-playlist" exact>
+          {
+            token === null
+            ? <Redirect to="/" />
+            : <MainApp />
+          }
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
-export default App;
+const AppContainer = () => {
+  return (
+    <ApiProvider>
+      <SearchProvider>
+        <App />
+      </SearchProvider>
+    </ApiProvider>
+  )
+}
+
+export default AppContainer;
